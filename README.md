@@ -21,7 +21,7 @@ Audit and summarize package vulnerabilities on GhostBSD and FreeBSD in a way tha
 ```sh
 # From the repo root
 chmod +x audit-sec.sh
-sudo mv audit-sec.sh /usr/local/bin/audit-sec.sh
+sudo mv audit-sec.sh /usr/local/bin/audit-sec
 ```
 
 Or fetch directly
@@ -29,13 +29,14 @@ Or fetch directly
 ```sh
 fetch -o /usr/local/bin/audit-sec.sh \
   https://raw.githubusercontent.com/xcrsz/audit-sec.sh/main/audit-sec.sh
-chmod +x /usr/local/bin/audit-sec.sh
+sudo chmod +x /usr/local/bin/audit-sec.sh
+sudo mv /usr/local/bin/audit-sec.sh /usr/local/bin/audit-sec
 ```
 
 ## Usage
 
 ```sh
-audit-sec.sh [OPTIONS]
+audit-sec [OPTIONS]
 ```
 
 Options
@@ -56,13 +57,13 @@ Options
 
 ```sh
 # Quick daily check
-audit-sec.sh --brief
+audit-sec --brief
 
 # Focus only on unmaintained items
-audit-sec.sh --brief --unmaintained-only
+audit-sec --brief --unmaintained-only
 
 # Full technical report with more dependent packages listed
-audit-sec.sh --top-reqs 50
+audit-sec --top-reqs 50
 ```
 
 ## What the output means
@@ -100,7 +101,7 @@ Includes name, origin, installed version, repo version, status, reason, CVEs if 
 
   ```sh
   sudo pkg update && sudo pkg upgrade
-  audit-sec.sh --brief
+  audit-sec --brief
   ```
 
   This ensures the report reflects the current state. The script already refreshes VuXML as part of its run. ([GitHub][1])
