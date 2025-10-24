@@ -2,15 +2,6 @@
 
 Audit and summarize package vulnerabilities on GhostBSD and FreeBSD in a way that is easy to act on. The script refreshes VuXML, parses `pkg audit`, and prints practical suggestions. It can show a compact one line view or a detailed report with links to advisories. ([GitHub][1])
 
-## Features
-
-* Refreshes VuXML and runs `pkg audit`
-* Brief mode for quick, readable summaries
-* Detailed mode with CVEs and advisory links
-* Highlights unmaintained or end of life packages
-* Shows whether a package is automatic or manual and whether anything depends on it
-* Prints next steps such as update, remove, or monitor ([GitHub][1])
-
 ## Requirements
 
 * GhostBSD or FreeBSD with `pkg` available
